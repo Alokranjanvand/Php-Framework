@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Provast</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body id="LoginForm">
+   <header>
+<div class="container">
+  <div class="row">
+<div class="col-md-3">
+  <div class="logo text-center">
+    <a href="index.html"><img src="img/provastlogo.png" class="img-fluid"></a>
+  </div>
+</div>
+<div class="col-md-5">
+  <h2 class="text-center serviveportal">Service Portal</h2>
+  </div>
+<div class="col-md-4">
+ <div class="col-md-12 ">
+<div class="row">
+  <div class="col-md-12">
+    <div class="topright">
+      <div class="ftb1">
+        <span>Calendar</span>
+      </div>
+      <div class="ftb">
+        <span id="demo"></span>
+      </div>
+      <div class="ftb">
+            <i class="fa fa-calendar"></i>
+            <form name="clockForm">
+            <input type="text" name="clockButton" class="showdate border-0"/>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div id="info"></div>
+  </div>
+</div><!-- row -->
+<div class="row">
+<div class="col-md-3 col-sm-4 col-3" >
+  <div class="ftbtimezone" >
+      <p>Time Zone:  </p>
+  </div>
+</div>
+<div class="col-md-8 col-sm-8 col-9">
+  <div class="row pd-left">
+    <div class="timezone">
+      <div class="te">
+      <span id="timezone"></span>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- row -->
+</div>
+</div>
+</div>
+</header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbg" id="navbar">
+    <div class="container">
+  <a class="navbar-brand" href="dashboard.html">Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      
+      
+      
+      
+      <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Admin
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="user_account_setup.html">User Account Setup</a>
+        <a class="dropdown-item" href="user_authorization.html">User Authorization</a>
+        <a class="dropdown-item" href="user_alert_setup.html">User Alerts Setup</a>
+        <a class="dropdown-item" href="user_linking_setup.html">Site/User Linking Setup</a>
+        <a class="dropdown-item" href="user_linking_report.html">Site/User Linking Report</a>
+        <a class="dropdown-item" href="data_import_utility.html">Data Import Utility</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Work Order
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="site_setup.html">Site Setup</a>
+        <a class="dropdown-item" href="add_request_client.html">Add Request</a>
+        <a class="dropdown-item" href="request_update_client.html">Request Update</a>
+        <a class="dropdown-item" href="request_status_client.html">Request Status</a>
+        <a class="dropdown-item" href="work_order.html">Work Order</a>
+        
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Budget
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="budget_setup.html">Budget Setup</a>
+        <a class="dropdown-item" href="excess_budget_approval.html">Excess Budget Appoval</a>
+        <a class="dropdown-item" href="budget_expense_report.html">Budget Expenses Report</a>
+        
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Inventory
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="material_requisition.html">Material Requisition</a>
+        <a class="dropdown-item" href="material_transfer.html">Material Transfer</a>
+        <a class="dropdown-item" href="material_return.html">Material Return</a>
+        
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Reports
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Work Order Status Report</a>
+        <a class="dropdown-item" href="#">Work Order Site Wise</a>
+        <a class="dropdown-item" href="#">Work Order Report</a>
+        <a class="dropdown-item" href="#">Monitor-Location Wise/Filter</a>
+        <a class="dropdown-item" href="#">Budget Site Wise</a>
+        <a class="dropdown-item" href="#">Budget Location Wise</a>
+        <a class="dropdown-item" href="#">Budget Asset Wise</a>
+      </div>
+    </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Welcome User
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="change_password.html">Change Password</a>
+        <a class="dropdown-item" href="reset_password.html">Reset Password</a>
+        <a class="dropdown-item" href="#">Logout</a>
+      </div>
+    </li>
+    </ul>
+    
+  </div>
+  </div>
+</nav>
+
+    <div class="addview">
+        <h1 class="addcategory">Material Requisition</h1>
+        <div class="float-right">
+            <div class="dropdown">
+                <button class="btn btn-primary navbg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Export
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Excel</a>
+                    <a class="dropdown-item" href="#">Word</a>
+                    <a class="dropdown-item" href="#">PDF</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- addview -->
+    <div class="container h-70">
+        <div class="page allchart">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="userform">
+                        <form>
+                            <div class="form-row">
+            <div class="form-group col-md-6 offset-md-6">
+            <div class="d-inline-block">
+            <label><span>P Req No.</span> </label> 
+            </div>
+            <div class="d-inline-block">
+            <input type="text" class="form-control" disabled="">
+            </div>
+            </div>
+        </div>
+                            <div class="form-row">
+                          <div class="form-group col-md-6">
+      <label for="inputPassword4">Work order no.</label>
+      <div class="input-group">
+    <input type="text" class="form-control" placeholder="Work order no.">
+    <div class="input-group-append">
+      <span class="input-group-text btn btn-primary" data-toggle="modal" data-target="#work_order"><i class="fa fa-search" aria-hidden="true"></i></span>
+</div>
+  </div>
+  <!-- The Modal -->
+  <div class="modal fade" id="work_order">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Word Order No.</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="form-row">
+
+    <div class="form-group col-md-9">
+      <input id="autocompletesearch" type="text" class="form-control" name="work_order" placeholder="Work order no.">
+    </div>
+    <div class="form-group col-md-3">
+      <input type="submit" value="search" class="btn btn-primary">
+    </div>
+
+  </div>
+          
+        </div>
+</div>
+    </div>
+  </div>
+  <!-- End The Modal -->
+    </div>
+   <div class="form-group col-md-6">
+      <label for="inputPassword4">Status</label>
+      <select class="form-control">
+    <option value="" selected="selected">Enter Status </option>
+    <option value="Open">Open</option>
+    <option value="Closed">Closed</option>
+    </select>
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Site Code</label>
+    <input type="text" class="form-control" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Posting Date</label>
+    <input type="text" class="form-control datepicker" placeholder="dd-mm-yyyy">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Site Name</label>
+    <input type="text" class="form-control" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Create Date</label>
+    <input type="text" class="form-control datepicker" placeholder="dd-mm-yyyy">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Contact Person</label>
+    <input type="text" class="form-control" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">From Branch</label>
+    <input type="text" class="form-control" disabled="">
+    </div>  
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Address</label>
+    <input type="text" class="form-control" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">From Warehouse</label>
+    <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+       <label for="comment">Remarks</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">To Warehouse</label>
+    <input type="text" class="form-control">
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+                                    <div class="form-group">
+<div class="table-responsive bgwhite">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="bgtable">
+          <th class="text-center">Item Code</th>
+          <th class="text-center">Description</th>
+          <th class="text-center">Quantity</th>
+          <th><span class="addrow btn btn-primary"><i class="fa fa-plus"></i> Add row</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td><input type="text" class="form-control" name="item"></td>
+        <td><input type="text" class="form-control" name="des"></td>
+        <td><input type="text" class="form-control" name="Quantity"></td>
+        <td><i class="fa fa-close text-danger remove btn" style="font-size:24px"></i></td>
+       </tr>
+        
+       
+      </tbody>
+    </table>
+  </div>
+</div>
+</div><!-- col-md-12 -->
+</div><!-- row -->
+                                <!-- col-md-6 -->
+
+<div class="form-row">
+           <div class="form-group col-md-6">
+    <label for="inputPassword4">Facility Coordinator</label>
+    <select class="form-control">
+    <option value="" selected="selected">Facility Coordinator</option>
+    </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Attachment</label>
+      <div class="input-group mb-3">
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile02">
+    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+  </div>
+  </div>
+    </div>
+        </div>                             
+<div class="form-group col-md-12">
+<div class="text-center">
+<button type="submit" class="btn btn-primary">Submit</button>
+<button type="reset" class="btn btn-primary">Cancel</button>
+</div>
+                            </div>
+                            </div>
+                            
+
+                            
+
+                        </form>
+                    </div>
+                    <!-- userform -->
+                </div>
+            </div>
+            <!--Row-->
+        </div>
+    </div>
+    <!-- container -->
+    <footer>
+  <div class="container">
+    <div class="row">
+    <div class="col-md-12">
+      <div class="copyright">
+      <p class="text-center">Copyright &copy; 2018  Provast All rights Reserved </p>
+    </div>
+    </div>
+</div>
+
+</div>
+</footer>
+    <script src="js/clock.js"></script>
+<link rel="stylesheet" href="calcss/jquery-ui.css">
+<script src="calcss/jquery-ui.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+    $(".datepicker").datepicker({
+    changeMonth : true,
+        changeYear : true,
+        yearRange : "2018:2020",
+        dateFormat : "dd-m-yy",
+        showOtherMonths : true,
+        selectOtherMonths : true    
+    });
+
+    $('.datepicker').mask('00/00/0000');
+});
+</script>
+
+<script src="js/search.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+   $('.addrow').click(function() {
+    $('tbody:last').before('<tr><td><input type="text" class="form-control" name="item"></td><td><input type="text" class="form-control" name="des"></td><td><input type="text" class="form-control" name="Quantity"></td><td><i class="fa fa-close text-danger remove btn" style="font-size:24px"></i></td></tr>');
+});
+$('.table-bordered').on('click','.remove',function() {
+  $(this).parent().parent().remove();
+});
+  });
+</script>
+</body>
+</html>

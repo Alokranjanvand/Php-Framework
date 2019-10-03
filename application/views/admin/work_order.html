@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Provast</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body id="LoginForm">
+   <header>
+<div class="container">
+  <div class="row">
+<div class="col-md-3">
+  <div class="logo text-center">
+    <a href="index.html"><img src="img/provastlogo.png" class="img-fluid"></a>
+  </div>
+</div>
+<div class="col-md-5">
+  <h2 class="text-center serviveportal">Service Portal</h2>
+  </div>
+<div class="col-md-4">
+ <div class="col-md-12 ">
+<div class="row">
+  <div class="col-md-12">
+    <div class="topright">
+      <div class="ftb1">
+        <span>Calendar</span>
+      </div>
+      <div class="ftb">
+        <span id="demo"></span>
+      </div>
+      <div class="ftb">
+            <i class="fa fa-calendar"></i>
+            <form name="clockForm">
+            <input type="text" name="clockButton" class="showdate border-0"/>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div id="info"></div>
+  </div>
+</div><!-- row -->
+<div class="row">
+<div class="col-md-3 col-sm-4 col-3" >
+  <div class="ftbtimezone" >
+      <p>Time Zone:  </p>
+  </div>
+</div>
+<div class="col-md-8 col-sm-8 col-9">
+  <div class="row pd-left">
+    <div class="timezone">
+      <div class="te">
+      <span id="timezone"></span>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- row -->
+</div>
+</div>
+</div>
+</header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbg" id="navbar">
+    <div class="container">
+  <a class="navbar-brand" href="dashboard.html">Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+    
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Admin
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="user_account_setup.html">User Account Setup</a>
+        <a class="dropdown-item" href="user_authorization.html">User Authorization</a>
+        <a class="dropdown-item" href="user_alert_setup.html">User Alerts Setup</a>
+        <a class="dropdown-item" href="user_linking_setup.html">Site/User Linking Setup</a>
+        <a class="dropdown-item" href="user_linking_report.html">Site/User Linking Report</a>
+        <a class="dropdown-item" href="data_import_utility.html">Data Import Utility</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Work Order
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="site_setup.html">Site Setup</a>
+        <a class="dropdown-item" href="add_request_client.html">Add Request</a>
+        <a class="dropdown-item" href="request_update_client.html">Request Update</a>
+        <a class="dropdown-item" href="request_status_client.html">Request Status</a>
+        <a class="dropdown-item" href="work_order.html">Work Order</a>
+        
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Budget
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="budget_setup.html">Budget Setup</a>
+        <a class="dropdown-item" href="excess_budget_approval.html">Excess Budget Appoval</a>
+        <a class="dropdown-item" href="budget_expense_report.html">Budget Expenses Report</a>
+        
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Inventory
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="material_requisition.html">Material Requisition</a>
+        <a class="dropdown-item" href="material_transfer.html">Material Transfer</a>
+        <a class="dropdown-item" href="material_return.html">Material Return</a>
+        
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Reports
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Work Order Status Report</a>
+        <a class="dropdown-item" href="#">Work Order Site Wise</a>
+        <a class="dropdown-item" href="#">Work Order Report</a>
+        <a class="dropdown-item" href="#">Monitor-Location Wise/Filter</a>
+        <a class="dropdown-item" href="#">Budget Site Wise</a>
+        <a class="dropdown-item" href="#">Budget Location Wise</a>
+        <a class="dropdown-item" href="#">Budget Asset Wise</a>
+      </div>
+    </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Welcome User
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="change_password.html">Change Password</a>
+        <a class="dropdown-item" href="reset_password.html">Reset Password</a>
+        <a class="dropdown-item" href="#">Logout</a>
+      </div>
+    </li>
+    </ul>
+    
+  </div>
+  </div>
+</nav>
+
+    <div class="addview">
+        <h1 class="addcategory">Work Order</h1>
+       <!--  <div class="float-right">
+            <div class="dropdown">
+                <button class="btn btn-primary navbg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Export
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Excel</a>
+                    <a class="dropdown-item" href="#">Word</a>
+                    <a class="dropdown-item" href="#">PDF</a>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+    <!-- addview -->
+    <div class="container h-70">
+        <div class="page allchart">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="userform">
+                        <form>
+                            <div class="form-row">
+                            <div class="form-group col-md-6">
+     <label for="site">Work order type </label><br>
+     <div class="mt-3">
+     <input type="radio" name="type" checked=""> Sale
+     <input type="radio" name="type"> Purchase
+    </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Call Status</label>
+      <select class="form-control">
+    <option value="" selected="selected">Enter Status </option>
+    <option value="Open">Open</option>
+    <option value="Closed">Closed</option>
+    </select>
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Work order no.</label>
+    <div class="input-group">
+    <input type="text" class="form-control" placeholder="Work order no.">
+    <div class="input-group-append">
+      <span class="input-group-text btn btn-primary" data-toggle="modal" data-target="#work_order"><i class="fa fa-search" aria-hidden="true"></i></span>
+</div>
+  </div>
+  <!-- The Modal -->
+  <div class="modal fade" id="work_order">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Word Order No.</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="form-row">
+
+    <div class="form-group col-md-9">
+      <input id="autocompletesearch" type="text" class="form-control" name="work_order" placeholder="Work order no.">
+    </div>
+    <div class="form-group col-md-3">
+      <input type="submit" value="search" class="btn btn-primary">
+    </div>
+
+  </div>
+          
+        </div>
+</div>
+    </div>
+  </div>
+  <!-- End The Modal -->
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Call Id</label>
+    <input type="text" class="form-control" placeholder="Call Id">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Site code</label>
+    <input type="text" class="form-control" placeholder="Call Id" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Priority</label>
+   <select class="form-control">
+    <option value="" selected="selected">Select Priority</option>
+    <option value="Open">High</option>
+    <option value="Closed">Low</option>
+    </select>
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Site name</label>
+    <input type="text" class="form-control" placeholder="Site name" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Created on</label>
+    <input type="text" class="form-control" placeholder="Created on" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Contact person</label>
+    <input type="text" class="form-control" placeholder="Contact person" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Closed on</label>
+    <input type="text" class="form-control" placeholder="Closed on" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Phone no.</label>
+    <input type="text" class="form-control" placeholder="Phone no." disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Service contract</label>
+    <input type="text" class="form-control" placeholder="Service contract" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Site ref. no.</label>
+    <input type="text" class="form-control" placeholder="Site ref. no." disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">End date.</label>
+    <input type="text" class="form-control" placeholder="End date." disabled="">
+    </div>
+    
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Cost code</label>
+    <input type="text" class="form-control" placeholder="Cost code" disabled="">
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Actual %</label>
+   <select class="form-control">
+    <option value="" selected="selected">Select Actual %</option>
+    <option value="Open">High</option>
+    <option value="Closed">Low</option>
+    </select>
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputPassword4">Subject</label>
+   <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+     
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+        <div class="tabdiv">
+        <ul class="nav nav-pills mb-3 border" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-general-tab" data-toggle="pill" href="#pills-general" role="tab" aria-controls="pills-home" aria-selected="true">General</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-resolution-tab" data-toggle="pill" href="#pills-resolution" role="tab" aria-controls="pills-resolution" aria-selected="false">Resolution</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-scheduling-tab" data-toggle="pill" href="#pills-scheduling" role="tab" aria-controls="pills-scheduling" aria-selected="false">Scheduling</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-precautions-tab" data-toggle="pill" href="#pills-precautions" role="tab" aria-controls="pills-precautions" aria-selected="false">Safety Precautions</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-attachments-tab" data-toggle="pill" href="#pills-attachments" role="tab" aria-controls="pills-attachments" aria-selected="false">Attachments</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-general" role="tabpanel" aria-labelledby="pills-general-tab">
+
+    <section id="generalsection">
+        <div class="form-row">
+            <div class="form-group col-md-6 offset-md-6">
+            <div class="d-inline-block">
+            <label><input type="radio" name="handle" checked="" class="d-inline"><span>Handled by</span> </label> 
+            </div>
+            <div class="d-inline-block">
+            <input type="text" class="form-control" disabled="">
+            </div>
+            </div>
+        </div>
+      <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Origin</label>
+      <select class="form-control" disabled="">
+    <option value="" selected="selected"> </option>
+    </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Job Type</label>
+      <select class="form-control" disabled="">
+    <option value="" selected="selected"> </option>
+    </select>
+    </div>
+</div>
+<div class="form-row">
+<div class="form-group col-md-4">
+    <label for="inputPassword4">Filter</label>
+      <select class="form-control" disabled="">
+    <option value="" selected="selected"> </option>
+    </select>  
+</div> 
+<div class="form-group col-md-4">
+    <label for="inputPassword4">Response</label><br>
+   <div class="d-inline-block">
+            <label><span>By :</span> </label> 
+            </div>
+            <div class="d-inline-block">
+            <input type="text" class="form-control" disabled="">
+            </div>
+</div> 
+<div class="form-group col-md-4">
+    <label for="inputPassword4">Resolution</label><br>
+      <div class="d-inline-block">
+            <label><span>By :</span> </label> 
+            </div>
+            <div class="d-inline-block">
+            <input type="text" class="form-control" disabled="">
+            </div>
+</div> 
+</div>
+<div class="form-row">
+<div class="form-group col-md-4">
+    <label for="inputPassword4">Technician</label>
+      <input type="text" class="form-control" disabled="">
+</div> 
+<div class="form-group col-md-4">
+   <div class="d-inline-block"><br>
+            <label><span>On</span> </label> 
+            </div>
+            <div class="d-inline-block mt-4">
+            <input type="text" class="form-control" disabled="">
+            </div>
+</div> 
+<div class="form-group col-md-4">
+      <div class="d-inline-block"><br>
+            <label><span>On </span> </label> 
+            </div>
+            <div class="d-inline-block mt-4">
+            <input type="text" class="form-control" disabled="">
+            </div>
+</div> 
+</div>
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <label for="inputPassword4">Sales order no.</label>
+          <input type="text" class="form-control" disabled="">
+    </div> 
+</div>
+<div class="form-row">
+    <div class="form-group col-md-3">
+        <label for="inputPassword4">Services</label>
+          <input type="text" class="form-control" disabled="">
+    </div> 
+    <div class="form-group col-md-3">
+        <label for="inputPassword4">Materials</label>
+          <input type="text" class="form-control" disabled="">
+    </div> 
+    <div class="form-group col-md-3">
+        <label for="inputPassword4">Other costs</label>
+          <input type="text" class="form-control" disabled="">
+    </div> 
+    <div class="form-group col-md-3">
+        <label for="inputPassword4">Total</label>
+          <input type="text" class="form-control" disabled="">
+    </div> 
+
+</div>
+
+    </section>
+  </div>
+  <div class="tab-pane fade" id="pills-resolution" role="tabpanel" aria-labelledby="pills-resolution-tab">
+      
+     <section id="resolution section">
+        <div class="resolutiontext border">
+            <p class="text-center">Text</p>
+
+        </div>
+         
+     </section> 
+  </div>
+  <div class="tab-pane fade" id="pills-scheduling" role="tabpanel" aria-labelledby="pills-scheduling-tab">
+      
+      <section class="scheduling">
+        <div class="row">
+            <div class="col-md-6">
+                 <div class="form-row">
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Start Time</label>
+          <input type="text" class="form-control">
+    </div> 
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">End Time</label>
+          <input type="text" class="form-control">
+    </div> 
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Duration</label>
+          <input type="text" class="form-control">
+    </div> 
+    <div class="form-group col-md-12 mt-4">
+            <div class="d-inline-block">
+            <label><input type="checkbox" name="handle" checked="" class="d-inline"><span>Reminder</span> </label> 
+            </div>
+            <div class="d-inline-block">
+            <input type="text" class="form-control">
+            </div>
+            </div>
+
+</div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="location">Location</label>
+      <select class="form-control" >
+    <option>Select Location</option>
+    <option value="Super User">Location1</option>
+    <option value="Client User">Location2</option>
+    <option value="FC User">Location3</option>
+    <option value="Support User ">Location4 </option>
+  </select>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="sub-location">Sub Location</label>
+      <select class="form-control" >
+    <option>Select Sub Location</option>
+    <option value="Super User">Sub Location1</option>
+    <option value="Client User">Sub Location2</option>
+    <option value="FC User">Sub Location3</option>
+    <option value="Support User ">Sub Location4 </option>
+  </select>
+    </div> 
+   <div class="form-group col-md-12">
+      <label for="sub-location">Sub-Sub Location</label>
+      <select class="form-control" >
+    <option>Select Sub-Sub Location</option>
+    <option value="Super User">Sub-Sub Location1</option>
+    <option value="Client User">Sub-Sub Location2</option>
+    <option value="FC User">Sub-Sub Location3</option>
+    <option value="Support User ">Sub-Sub Location4 </option>
+  </select>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="sub-location">Asset</label>
+      <select class="form-control" >
+    <option>Select Asset</option>
+    <option value="Asset1">Asset1</option>
+    <option value="Asset2">Asset2</option>
+    <option value="Asset3">Asset3</option>
+    <option value="Asset4">Asset4 </option>
+  </select>
+    </div>
+
+</div>
+            </div>
+        </div>
+
+         
+      </section>
+  </div>
+  <div class="tab-pane fade" id="pills-precautions" role="tabpanel" aria-labelledby="pills-precautions-tab">
+<section class="precautionsdiv">
+    <div class="row">
+            <div class="col-md-4">
+                 <div class="form-row">
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Warning sign/notice</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div> 
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Scaffolding Platform</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div> 
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Safety Goggles</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+     <div class="form-group col-md-12">
+        <label for="inputPassword4">Light Fumes Mask</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+       <div class="form-group col-md-12">
+        <label for="inputPassword4">Plastic Gloves</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Gas Test</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Temporary Demarcation</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Safety Helmet</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+  
+
+</div>
+            </div>
+            <div class="col-md-4">
+                 <div class="form-row">
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Full Face Visor</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div> 
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Breathing Apparatus</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div> 
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Rubber Boots</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+     <div class="form-group col-md-12">
+        <label for="inputPassword4">Temp.Road Closure</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+       <div class="form-group col-md-12">
+        <label for="inputPassword4">Safety Shoes</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Protective Apron</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Hearing Protection</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Safety Harness</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+  
+
+</div>
+            </div>
+            <div class="col-md-4">
+                 <div class="form-row">
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Additional Lighting</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div> 
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Safety Spectacles</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div> 
+    <div class="form-group col-md-12">
+        <label for="inputPassword4">Dust Mask</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+     <div class="form-group col-md-12">
+        <label for="inputPassword4">Leather Gloves</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+       <div class="form-group col-md-12">
+        <label for="inputPassword4">Work vest/Life jackets</label>
+    <select class="form-control" >
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+    </div>
+   
+   
+  
+
+</div>
+            </div>
+            
+        </div>
+    
+</section>
+  </div>
+   <div class="tab-pane fade" id="pills-attachments" role="tabpanel" aria-labelledby="pills-attachments-tab">
+
+<section class="Attachmentsdiv">
+    <div class="row">
+            <div class="col-md-9">
+                        <div class="form-group">
+<div class="table-responsive bgwhite">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Serial Number</th>
+          <th>File Name</th>
+          <th>Attachment Date </th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+       </tr>
+     
+       
+
+       
+      </tbody>
+    </table>
+  </div>
+</div>
+                 
+            </div>
+            
+            <div class="col-md-3">
+                 <div class="form-row">
+    
+    <div class="form-group col-md-12 mt-12">
+      <div class="input-group mb-3">
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile02">
+    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+  </div>
+  </div>
+    </div>
+     
+     
+   
+   
+  
+
+</div>
+            </div>
+            
+        </div>
+    
+</section>
+
+   </div>
+</div>
+</div>
+<!-- tab -->
+                            
+</div><!-- col-md-12 -->
+</div><!-- row -->
+                                <!-- col-md-6 -->
+                                
+<div class="form-group col-md-12">
+<div class="text-center">
+<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary">Find</button>
+<button type="reset" class="btn btn-primary">Cancel</button>
+</div>
+                            </div>
+                            </div>
+                            
+
+                            
+
+                        </form>
+                    </div>
+                    <!-- userform -->
+                </div>
+            </div>
+            <!--Row-->
+        </div>
+    </div>
+    <!-- container -->
+    <footer>
+  <div class="container">
+    <div class="row">
+    <div class="col-md-12">
+      <div class="copyright">
+      <p class="text-center">Copyright &copy; 2018  Provast All rights Reserved </p>
+    </div>
+    </div>
+</div>
+
+</div>
+</footer>
+    <script src="js/clock.js"></script>
+<link rel="stylesheet" href="calcss/jquery-ui.css">
+<script src="calcss/jquery-ui.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+    $(".datepicker").datepicker({
+    changeMonth : true,
+        changeYear : true,
+        yearRange : "2018:2020",
+        dateFormat : "dd-m-yy",
+        showOtherMonths : true,
+        selectOtherMonths : true    
+    });
+
+    $('.datepicker').mask('00/00/0000');
+});
+</script>
+</body>
+<script src="js/search.js"></script>
+</html>
