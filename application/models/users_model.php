@@ -138,7 +138,15 @@ else
             return $q->row();
 
 
-  }
+	}
+	 public function find_admin($user_id)
+  	{
+  	 $q=$this->db->where('id',$user_id)
+            ->get('tb_adminusers');
+            return $q->row();
+
+
+	}
    public function update_user($user_id,Array $data)
   {
    return $this->db->where('id',$user_id)

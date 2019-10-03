@@ -52,7 +52,11 @@
       <label for="images">Images</label>
       <input type="file" name="picture" class="form-control" placeholder="User Images"><br/>
       <img src="<?= base_url('uploads/'.$user->user_image)?>" height="50">
-      
+    </div>
+	<div class="form-group col-md-12">
+      <label for="images">Gallery</label>
+      <input type="file" name="gallery" class="form-control" placeholder="User Gallery"><br/>
+      <img src="<?= base_url('uploads/gallery/'.$user->gallery)?>" height="50">
     </div>
      
     <div class="form-group col-md-12">
@@ -78,18 +82,7 @@
           </div>
  </div>  
  <!-- container -->
-<footer>
-  <div class="container">
-    <div class="row">
-    <div class="col-md-12">
-      <div class="copyright">
-      <p class="text-center">Copyright &copy; 2018  Provast All rights Reserved </p>
-    </div>
-    </div>
-</div>
 
-</div>
-</footer>
 <?php include('footer.php');?>
 <script src="<?php echo base_url('assets/js/clock.js');?>"></script>
 

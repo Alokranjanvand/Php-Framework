@@ -25,8 +25,8 @@ function index()
 				$this->session->set_userdata('user_name',$user_id);
 				return redirect('admin/view');
 			}else{
-			$this->session->set_flashdata('Login_failed','Invalid Username/Password');
-      		return redirect('login');
+				$this->session->set_flashdata('Login_failed','Invalid Username/Password');
+				return redirect('login');
 			}
 		}else{
 		$this->load->view('admin/login');

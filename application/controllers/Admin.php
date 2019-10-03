@@ -86,6 +86,7 @@ class Admin extends My_controller {
 			$this->form_validation->set_rules('email','Email','trim|required|valid_email');
 			 $user=$this->Users_model->find_user($id);
 			 $img=$user->user_image;
+			 $gallery=$user->gallery;
 			if($this->form_validation->run()){
 			$name=$this->input->post('name');
 			$email=$this->input->post('email');
@@ -106,12 +107,28 @@ class Admin extends My_controller {
             }else{
             	$picture = $img;
             }
+			if($_FILES['gallery']['size']>0 && $_FILES['gallery']['error']==''){
+				@unlink("uploads/gallery/".$gallery);
+                $b='uploads/gallery/';
+                $gal_file=upload_file_data('gallery',$b);
+                if($gal_file){
+                    $gal_pic = $gal_file['file_name'];
+                }else{
+                    $gal_pic = '';
+                }
+	           
+	    		
+            }else{
+            	$gal_pic = $gallery;
+            }
 			
 			$data=array(
 					"name" 		  => $name,
 					"email" 	  => $email,
 					"password"	  => $password,
-					"user_image"  => $picture
+					"user_image"  => $picture,
+					"gallery"  => $gal_pic
+					
 				);
 			//error_log("message=== ".print_r($data,true));
 			$update=$this->Users_model->update_user($id,$data);
@@ -130,13 +147,19 @@ class Admin extends My_controller {
 		public function view(){
 		$base_url = base_url() . "admin/view";
 		$config=$this->pagination_f($base_url);
-        //
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         //error_log("message".$page);
         $data["links"] = $this->pagination->create_links();
         $data['authors'] = $this->Users_model->get_authors($config["per_page"], $page);
         $this->load->view('admin/viewdata', $data);
+		}
+		public function changepassword(){
+			$login_id=$this->session->userdata('id');
+			$this->load->model('Users_model');
+			$data['data']=$this->Users_model->find_admin($login_id);
+			$this->load->view('admin/change_password',$data);
+			
 		}
 		
 	public function pagination_f($base_url){

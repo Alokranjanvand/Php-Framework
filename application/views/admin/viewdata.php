@@ -90,6 +90,7 @@ $insert_msg=$this->session->flashdata('insertdata');
           <th>Email</th>
           <th>Password</th>
           <th>User Images</th>
+		  <th>Gallery</th>
           <th>Edit</th>
           <th>
             <center><input name="check_all" type="checkbox"   id="check_all" onclick="checkall(this.form)" value="check_all" /></center>
@@ -106,6 +107,7 @@ $insert_msg=$this->session->flashdata('insertdata');
         <td><?php echo $new->email; ?></td>
         <td><?php echo $new->password; ?></td>
         <td><img src="<?php echo base_url('/uploads/').$new->user_image; ?>" height="50"></td>
+		 <td><img src="<?php echo base_url('/uploads/gallery/').$new->gallery; ?>" height="50"></td>
         <td>
         <?=  anchor("admin/editUser/{$new->id}",'Edit',['class'=>'btn btn-default']);  ?></td>
 <td align="center">

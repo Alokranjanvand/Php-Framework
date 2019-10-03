@@ -121,7 +121,7 @@
         ?>
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="change_password.html">Change Password</a>
+        <a class="dropdown-item" href="<?= site_url('admin/changepassword');?>">Change Password</a>
         <a class="dropdown-item" href="<?= site_url('admin/logout');?>">Logout</a>
       </div>
     </li>
