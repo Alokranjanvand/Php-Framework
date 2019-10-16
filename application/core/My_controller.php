@@ -5,7 +5,7 @@
 class My_controller extends CI_Controller
 {
 	
-	public function EncryptPassword($string) {
+	function EncryptPassword($string) {
 	    $encrypt_method = "AES-256-CBC";
 	    $secret_key = 'parahit@#Technology';
 	    $secret_iv = '128459633';
@@ -15,7 +15,7 @@ class My_controller extends CI_Controller
 		$output = base64_encode($output);
 	    return $output;
 	}
-    public function DecryptPassword($string) {
+    function DecryptPassword($string) {
 	    $encrypt_method = "AES-256-CBC";
 	    $secret_key = 'parahit@#Technology';
 	    $secret_iv = '128459633';
@@ -28,23 +28,23 @@ class My_controller extends CI_Controller
 	    return $output;
 	}
 	//Base64 Encode and Decode String in PHP
-	public function base64url_encode($plainText) {
+	function base64url_encode($plainText) {
 		$base64 = base64_encode($plainText);
 		$base64url = strtr($base64, '+/=', '-_,');
 		return $base64url;
 	}
 
-	public function base64url_decode($plainText) {
+	function base64url_decode($plainText) {
 		$base64url = strtr($plainText, '-_,', '+/=');
 		$base64 = base64_decode($base64url);
 		return $base64;
 	}
 	//Get Remote IP Address in PHP
-	public function getRemoteIPAddress() {
+	function getRemoteIPAddress() {
 		$ip = $_SERVER['REMOTE_ADDR'];
 		return $ip;
 	}
-	public function getRealIPAddr()
+	function getRealIPAddr()
 	{
 		if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
 		{
@@ -60,7 +60,7 @@ class My_controller extends CI_Controller
 		}
 		return $ip;
 	}
-	public function secsToStr($secs) 
+	function secsToStr($secs) 
 	{
 		if($secs>=86400)
 		{
